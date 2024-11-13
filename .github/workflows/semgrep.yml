@@ -7,11 +7,11 @@ jobs:
     # User definable name of this GitHub Actions job.
     name: semgrep/ci-full
     # If you are self-hosting, change the following `runs-on` value:
-    runs-on: semgrep-dind
+    runs-on: ubuntu-latest
 
     container:
       # A Docker image with Semgrep installed. Do not change this.
-      image: semgrep/semgrep:latest
+      image: semgrep/semgrep
 
     # Skip any PR created by dependabot to avoid permission issues and only for push requests:
     if: (github.actor != 'dependabot[bot]') && (github.event_name == 'push')
@@ -31,11 +31,11 @@ jobs:
     # User definable name of this GitHub Actions job.
     name: semgrep/ci-schedule
     # If you are self-hosting, change the following `runs-on` value:
-    runs-on: semgrep-dind
+    runs-on: ubuntu-latest
 
     container:
       # A Docker image with Semgrep installed. Do not change this.
-      image: semgrep/semgrep:latest
+      image: semgrep/semgrep
 
     # Skip any PR created by dependabot to avoid permission issues and only for pull_requests:
     if: (github.actor != 'dependabot[bot]') && (github.event_name == 'schedule')
@@ -55,11 +55,11 @@ jobs:
     # User definable name of this GitHub Actions job.
     name: semgrep/ci-incremental
     # If you are self-hosting, change the following `runs-on` value:
-    runs-on: custom-dind
+    runs-on: ubuntu-latest
 
     container:
       # A Docker image with Semgrep installed. Do not change this.
-      image: semgrep/semgrep:latest
+      image: semgrep/semgrep
 
     # Skip any PR created by dependabot to avoid permission issues and only for pull_requests:
     if: (github.actor != 'dependabot[bot]') && (github.event_name == 'pull_request')
